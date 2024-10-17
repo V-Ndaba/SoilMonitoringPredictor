@@ -1,0 +1,238 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Type": "SQL",
+    "Version": 1,
+    "ColumnProperties": [
+      {
+        "ColumnName": "SoilMonitoringID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "PlotID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CropName",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilMoisture",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilTemp",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilNitrogen",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilPhosphorus",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilPotassium",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SoilOxygen",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "DateStored",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "MonitoringImage",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ],
+    "ConnectionString": "Data Source=G3NGH1S-KHAN\\SQLEXPRESS;Initial Catalog=EfficientlyFarmed;Integrated Security=True;Trust Server Certificate=True",
+    "CommandString": "SELECT CAST([SoilMonitoringID] as REAL), CAST([PlotID] as REAL), CAST([CropName] as NVARCHAR(MAX)), CAST([SoilMoisture] as REAL), CAST([SoilTemp] as REAL), CAST([SoilNitrogen] as REAL), CAST([SoilPhosphorus] as REAL), CAST([SoilPotassium] as REAL), CAST([SoilOxygen] as REAL), [DateStored], CAST([MonitoringImage] as NVARCHAR(MAX)) FROM [dbo].[SoilMonitoring]",
+    "DatabaseName": "EfficientlyFarmed",
+    "SelectedTableDbo": "dbo",
+    "TableName": "SoilMonitoring"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 6.2058488527933751,
+        "RuntimeInSeconds": 0.019,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 4,
+            "SeriesLength": 9,
+            "TrainSize": 32,
+            "Horizon": 10,
+            "OutputColumnName": "SoilMoisture",
+            "InputColumnName": "SoilMoisture",
+            "ConfidenceLowerBoundColumn": "SoilMoisture_LB",
+            "ConfidenceUpperBoundColumn": "SoilMoisture_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 6.2058488527933751,
+        "RuntimeInSeconds": 0.008,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 4,
+            "SeriesLength": 12,
+            "TrainSize": 32,
+            "Horizon": 10,
+            "OutputColumnName": "SoilMoisture",
+            "InputColumnName": "SoilMoisture",
+            "ConfidenceLowerBoundColumn": "SoilMoisture_LB",
+            "ConfidenceUpperBoundColumn": "SoilMoisture_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 6.2058488527933751,
+        "RuntimeInSeconds": 0.011,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 4,
+            "SeriesLength": 14,
+            "TrainSize": 32,
+            "Horizon": 10,
+            "OutputColumnName": "SoilMoisture",
+            "InputColumnName": "SoilMoisture",
+            "ConfidenceLowerBoundColumn": "SoilMoisture_LB",
+            "ConfidenceUpperBoundColumn": "SoilMoisture_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 6.2058488527933751,
+        "RuntimeInSeconds": 0.012,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 4,
+            "SeriesLength": 21,
+            "TrainSize": 32,
+            "Horizon": 10,
+            "OutputColumnName": "SoilMoisture",
+            "InputColumnName": "SoilMoisture",
+            "ConfidenceLowerBoundColumn": "SoilMoisture_LB",
+            "ConfidenceUpperBoundColumn": "SoilMoisture_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 6.2058488527933751,
+        "RuntimeInSeconds": 0.009,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 4,
+            "SeriesLength": 18,
+            "TrainSize": 32,
+            "Horizon": 10,
+            "OutputColumnName": "SoilMoisture",
+            "InputColumnName": "SoilMoisture",
+            "ConfidenceLowerBoundColumn": "SoilMoisture_LB",
+            "ConfidenceUpperBoundColumn": "SoilMoisture_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "MAE",
+    "ModelFilePath": "C:\\Users\\vusin\\OneDrive\\Documents\\FYP24\\WebAPI\\EfficientlyFarmed\\SoilMonitoringML.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "MAE",
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 60,
+    "UseCrossValidation": false,
+    "Horizon": 10,
+    "TimeColumn": "SoilMonitoringID",
+    "LabelColumn": "SoilMoisture",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
